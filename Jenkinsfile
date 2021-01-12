@@ -20,7 +20,7 @@ agent any
         {
                   steps
                  {
-                    echo "deploying done"
+                    echo "deploying done gj"
                  }
         }
   
