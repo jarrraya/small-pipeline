@@ -1,13 +1,19 @@
 pipeline {
-  agent {
-    docker { image 'node:12-buster-slim' } 
-        }
+  agent 
+  any }
   stages {
   
        stage("build")
          {
-              steps
-                 {
+          agent  {
+                docker { image 'node:12-buster-slim' }
+                 }
+            stages{
+                stage ('npm install'){
+                    steps {
+                        sh "npm install"
+                    }
+                }
                     echo "building done"
                  }
          }
