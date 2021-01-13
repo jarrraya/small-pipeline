@@ -1,6 +1,6 @@
 pipeline {
   agent 
-  any    }
+  any    
 
     stages {
           stage ('Show commit author') 
@@ -29,3 +29,4 @@ pipeline {
         }
     }
       
+}
