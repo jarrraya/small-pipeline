@@ -1,16 +1,17 @@
 pipeline {
-  agent { docker { image 'node' } }
-  environment {  HOME = '.' }
-
+ 
     stages {
          
-          stage('Build') {
-            steps {
-              bat 'make'
-                echo 'Building..'
-            }
+          stage ('Execute CI pipeline') {
+            agent {
+                docker { image 'node' }
+                  }
           }
-        
+         stage ('npm install'){
+                    steps {
+                        bat "npm install"
+                          }
+                  }
       
       stage('test') {
             steps {
