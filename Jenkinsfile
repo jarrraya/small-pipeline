@@ -1,29 +1,34 @@
 pipeline {
+ agent any
  
     stages {
          
-          stage ('Execute CI pipeline') {
+          stage ('Execute CI pipeline') 
+                            {
             agent {
                 docker { image 'node' }
                   }
-          }
-         stage ('npm install'){
-                    steps {
+                            }
+         stage ('npm install')
+     {
+                   steps {
                         bat "npm install"
                           }
-                  }
+     }
       
       stage('test') {
-            steps {
-                echo 'testing..'
-            }
-        }
+                steps {
+                    echo 'testing..'
+                      }
+                     }
       
-      stage('deploy') {
-            steps {
+      stage('deploy')
+     {
+            steps
+                  {
                 echo 'deploying..'
-            }
-        }
-    }
+                  }
+     }
+           }
       
 }
